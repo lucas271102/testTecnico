@@ -1,4 +1,6 @@
 import React from "react";
+import Royal from "../assets/royal.jpg";
+import { Link as Anchor} from "react-router-dom";
 import {
   Dropdown,
   DropdownTrigger,
@@ -81,10 +83,12 @@ const Home = () => {
             />
           </svg>
         </div>
-        <div className="flex justify-center gap-96  p-4">
+        <div className="flex justify-center gap-96 w-[100%]  p-4">
           <Dropdown>
             <DropdownTrigger className="w-[20%]">
-              <Button variant="bordered">Categories</Button>
+              <Button variant="bordered" className="font-bold text-xl">
+                Categories
+              </Button>
             </DropdownTrigger>
             <DropdownMenu
               aria-label="Action event example"
@@ -98,15 +102,30 @@ const Home = () => {
               <DropdownItem key="copy">Juguetes</DropdownItem>
               <DropdownItem key="edit">Peluquerías</DropdownItem>
               <DropdownItem key="new">Vacunas</DropdownItem>
-              
-              
             </DropdownMenu>
           </Dropdown>
           <div className="flex gap-20">
             <button>Home</button>
-            <button className="bg-yellow-300 p-2 border rounded-md font-semibold font-sans">Inicar Sesión</button>
+            <Anchor to="/login" className="bg-yellow-300 p-2 border rounded-md font-semibold font-sans">
+                Inicar Sesión
+              
+            </Anchor>
           </div>
         </div>
+      </div>
+      <div className="flex">
+        <div className="p-8">
+          <h2 className=" font-semibold text-2xl p-4">
+            Descuentos en Royal Mini Adult{" "}
+          </h2>
+          <p className="p-4">Descuentos en comida de Perro adulto Royal</p>
+          <div className="p-4">
+            <button className="bg-pink-600 p-2 text-white  border rounded-md text-sm">
+              Visitar producto
+            </button>
+          </div>
+        </div>
+        <img src={Royal} alt="" className="w-[50%]" />
       </div>
     </>
   );
