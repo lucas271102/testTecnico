@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 const Login = () => {
-  const {loginWithRedirect}= useAuth0()
+  const { loginWithRedirect } = useAuth0();
   return (
     <section className="bg-white p-4 ">
       <div className="lg:grid lg:min-h-screen border border-black  p-4 lg:grid-cols-12">
@@ -41,21 +41,19 @@ const Login = () => {
                 href="/"
               >
                 <span className="sr-only">Home</span>
-               
               </a>
 
               <h1 className="text-lg font-bold  text-center text-violet-800 ">
-              Estás a un paso!
+                Estás a un paso!
               </h1>
 
               <p className="text-center text-5xl font-semibold text-violet-800">
-              Inicia Sesión o crea una nueva cuenta para poder iniciar tu
-              consulta.
+                Inicia Sesión o crea una nueva cuenta para poder iniciar tu
+                consulta.
               </p>
             </div>
 
-            <form  className=" border border-violet-700 p-12 rounded-md grid grid-cols-6 gap-6">
-             
+            <form className=" border border-violet-700 p-12 rounded-md grid grid-cols-6 gap-6">
               <div className="col-span-4">
                 <label
                   for="Email"
@@ -88,21 +86,19 @@ const Login = () => {
                 />
               </div>
 
-
-
               <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
-                <button 
-                className="inline-block shrink-0 rounded-md border border-blue-600 bg-violet-700 px-12 py-3 text-sm 
+                <button
+                  className="inline-block shrink-0 rounded-md border border-blue-600 bg-violet-700 px-12 py-3 text-sm 
                 font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
-                onClick={()=>loginWithRedirect()}
+                  onClick={() => loginWithRedirect()}
                 >
-                  Iniciar sesión 
+                  Iniciar sesión
                 </button>
                 <button className="inline-block shrink-0 rounded-md border border-blue-600 bg-white px-12 py-3 text-sm font-medium text-violet-700 transition hover:bg-violet-700 hover:text-white focus:outline-none focus:ring active:text-blue-500">
                   Sign in With Google
                 </button>
                 <p class="mt-4 text-sm text-gray-500 sm:mt-0">
-                ¿No tenés una cuenta?
+                  ¿No tenés una cuenta?
                   <a href="#" class="text-gray-700 underline">
                     Registrate aquí.
                   </a>
