@@ -8,8 +8,11 @@ import {
   DropdownItem,
   Button,
 } from "@nextui-org/react";
+import Logout from "./Logout";
+import Profile from "./Profile";
 
 const Home = () => {
+  
   return (
     <>
       <div className="border border-black p-2 shadow-md shadow-black/50">
@@ -82,6 +85,7 @@ const Home = () => {
               d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
             />
           </svg>
+            <Profile/>
         </div>
         <div className="flex justify-center gap-96 w-[100%]  p-4">
           <Dropdown>
@@ -94,7 +98,7 @@ const Home = () => {
               aria-label="Action event example"
               onAction={(key) => alert(key)}
               className="w-[100%]"
-            >
+              >
               <DropdownItem key="new">Literas</DropdownItem>
               <DropdownItem key="copy">Comida de Perro</DropdownItem>
               <DropdownItem key="edit">Transportadoras</DropdownItem>
@@ -110,9 +114,11 @@ const Home = () => {
                 Inicar Sesión
               
             </Anchor>
+            <Logout/>
           </div>
         </div>
       </div>
+              
       <div className="flex">
         <div className="p-8">
           <h2 className=" font-semibold text-2xl p-4">
