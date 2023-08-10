@@ -4,7 +4,7 @@ const Logout = () => {
     const {logout}  = useAuth0()
   return (
     <>
-    <button onClick={()=>logout({returnTo:window.location.origin})} className='bg-red-500 p-2 border rounded-md text-center'>Cerrar sesión</button>
+    <button onClick={()=>logout({returnTo:window.location.origin})} className='bg-red-500 p-2 border rounded-md text-white text-center'>Cerrar sesión</button>
     </>
   )
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import Royal from "../assets/royal.jpg";
-import { Link as Anchor} from "react-router-dom";
+import { Link as Anchor } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 import {
   Dropdown,
   DropdownTrigger,
@@ -12,7 +13,7 @@ import Logout from "./Logout";
 import Profile from "./Profile";
 
 const Home = () => {
-  
+  const { user, loginWithRedirect } = useAuth0();
   return (
     <>
       <div className="border border-black p-2 shadow-md shadow-black/50">
@@ -85,9 +86,18 @@ const Home = () => {
               d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
             />
           </svg>
-            <Profile/>
+          <Profile />
+
+          {!user ? (
+            <button
+              className="bg-yellow-300 p-2 border rounded-md font-semibold font-sans"
+              onClick={() => loginWithRedirect()}
+            >
+              Iniciar sesión
+            </button>
+          ) : null}
         </div>
-        <div className="flex justify-center gap-96 w-[100%]  p-4">
+        <div className="flex justify-center  gap-96 w-[100%]  p-4">
           <Dropdown>
             <DropdownTrigger className="w-[20%]">
               <Button variant="bordered" className="font-bold text-xl">
@@ -98,7 +108,7 @@ const Home = () => {
               aria-label="Action event example"
               onAction={(key) => alert(key)}
               className="w-[100%]"
-              >
+            >
               <DropdownItem key="new">Literas</DropdownItem>
               <DropdownItem key="copy">Comida de Perro</DropdownItem>
               <DropdownItem key="edit">Transportadoras</DropdownItem>
@@ -108,17 +118,10 @@ const Home = () => {
               <DropdownItem key="new">Vacunas</DropdownItem>
             </DropdownMenu>
           </Dropdown>
-          <div className="flex gap-20">
-            <button>Home</button>
-            <Anchor to="/login" className="bg-yellow-300 p-2 border rounded-md font-semibold font-sans">
-                Inicar Sesión
-              
-            </Anchor>
-            <Logout/>
-          </div>
+          <div className="flex gap-20"></div>
         </div>
       </div>
-              
+
       <div className="flex">
         <div className="p-8">
           <h2 className=" font-semibold text-2xl p-4">
