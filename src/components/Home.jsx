@@ -106,16 +106,16 @@ const Home = () => {
             </DropdownTrigger>
             <DropdownMenu
               aria-label="Action event example"
-              onAction={(key) => alert(key)}
+           
               className="w-[100%]"
             >
-              <DropdownItem key="new">Literas</DropdownItem>
-              <DropdownItem key="copy">Comida de Perro</DropdownItem>
-              <DropdownItem key="edit">Transportadoras</DropdownItem>
-              <DropdownItem key="new">Comida de Gato</DropdownItem>
-              <DropdownItem key="copy">Juguetes</DropdownItem>
-              <DropdownItem key="edit">Peluquerías</DropdownItem>
-              <DropdownItem key="new">Vacunas</DropdownItem>
+              <DropdownItem key="new"><Anchor to = '/literas'>Literas</Anchor></DropdownItem>
+              <DropdownItem key="copy"> <Anchor to='/comidaperro'>Comida de perro</Anchor></DropdownItem>
+              <DropdownItem key="edit"><Anchor to ='/transportadoras'>Transportadoras</Anchor></DropdownItem>
+              <DropdownItem key="new"><Anchor to ='/comidagato'>Comida de gato</Anchor>  </DropdownItem>
+              <DropdownItem key="copy"> <Anchor to='/juguetes'>Juguetes</Anchor>      </DropdownItem>
+              <DropdownItem key="edit">  <Anchor to ='/peluquerias'>Peluquerias</Anchor>    </DropdownItem>
+              <DropdownItem key="new">     <Anchor to ='/vacunas'>Vacunas</Anchor>   </DropdownItem>
             </DropdownMenu>
           </Dropdown>
           <div className="flex gap-20"></div>
